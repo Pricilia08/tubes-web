@@ -123,7 +123,7 @@
                                     <ul class="mobile-menu-nav">
                                         <li><a href="index.php" data-toggle="collapse" data-target="#Charts"> Dashboard </a></li>
                                         <li><a href="view_pengguna.php" data-toggle="collapse" data-target="#Charts"> Pengguna </a></li>
-                                        <li><a href="view_volunteer.php" data-toggle="collapse" data-target="#Charts"> <li><a href="view_pengguna.php" data-toggle="collapse" data-target="#Charts"> Pengguna </a></li>
+                                        <li><a href="view_pengguna.php" data-toggle="collapse" data-target="#Charts"> Pengguna </a></li>
                                         Volunteer </a></li>
                                         <li><a data-toggle="collapse" data-target="#Charts" href="view_berita.php">Berita <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">

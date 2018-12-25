@@ -5,7 +5,7 @@
     $result=mysqli_query($conn,$delete_query);  
     if($result)  
     {   
-        echo "<script>window.open('view_volunteer.php?deleted=forum has been deleted','_self')</script>";  
+        echo "<script>window.open('view_volunteer.php?deleted=volunteer has been deleted','_self')</script>";  
     }  
       
     ?>  

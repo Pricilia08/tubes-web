@@ -15,7 +15,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Volunteer | Petshelter</title>
+    <title>Pengguna | Petshelter</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="img/favicon.ico">
@@ -185,17 +185,17 @@
                                         $hasil = mysqli_query($conn,$sql);
                                         $no = 1;
                                         while ($row = mysqli_fetch_array($hasil)) {
-                                            $user_id=$row[0];  
-                                            $user_nama_vol=$row[1];  
-                                            $user_email=$row[2];  
+                                            $id=$row[0];  
+                                            $nama_vol=$row[1];  
+                                            $email=$row[2];  
                                             
                                     ?>
                                     <tr>
                                         <td><?php echo $no++  ?></td>
-                                        <td><?php echo $user_nama_vol;  ?></td>
-                                        <td><?php echo $user_email;  ?></td>
+                                        <td><?php echo $nama_vol;  ?></td>
+                                        <td><?php echo $email;  ?></td>
                                         <td>
-                                            <a href="delete_pengguna.php?del=<?php echo $user_id ?>">
+                                            <a href="delete_pengguna.php?del=<?php echo $id ?>">
                                             <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                         </td>
                                     </tr>

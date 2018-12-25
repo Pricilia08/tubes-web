@@ -54,7 +54,7 @@
                             <a href="index.php" aria-expanded="false"><span class="educate-icon educate-home icon-wrap"></span> <span class="mini-click-non">Dashboard</span></a>
                         </li>
                         <li class="active">
-                            <a href="view_volunteer.php" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Pengguna</span></a>
+                            <a href="view_pengguna.php" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Pengguna</span></a>
                         </li>
                         <li class="active">
                             <a href="view_volunteer.php" aria-expanded="false"><span class="educate-icon educate-student icon-wrap"></span> <span class="mini-click-non">Volunteer</span></a>
@@ -169,7 +169,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Users Pengguna</h4>
+                            <h4>Pengguna List</h4>
                             <div class="asset-inner">
                                 <table>
                                     <tr>
@@ -196,20 +196,20 @@
                                         $res_data = mysqli_query($conn,$sql);
                                         $no = 1;
                                         while($row = mysqli_fetch_array($res_data)){
-                                            $user_id=$row[0];  
-                                            $user_nama_vol=$row[1];  
-                                            $user_email=$row[2];  
+                                            $id=$row[0];  
+                                            $nama_vol=$row[1];  
+                                            $email=$row[2];  
                                     ?>
                                     <form method="post" action="view_pengguna.php">
-                                        <tr>
-                                            <td><?php echo $no++  ?></td>
-                                            <td><?php echo $user_nama_vol;  ?></td>
-                                            <td><?php echo $user_email;  ?></td>
-                                            <td>
-                                                <a href="delete_pengguna.php?del=<?php echo $user_id ?>">
-                                                <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
-                                            </td>
-                                        </tr>
+                                       <tr>
+                                        <td><?php echo $no++  ?></td>  
+                                        <td><?php echo $nama_vol ?></td>
+                                        <td><?php echo $email;  ?></td>
+                                        <td>
+                                            <a href="delete_pengguna.php?del=<?php echo $id ?>">
+                                            <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
+                                        </td>
+                                       </tr> 
                                     </form>
                                     <?php } ?> 
                                 </table>

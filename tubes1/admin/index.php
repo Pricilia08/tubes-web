@@ -148,7 +148,7 @@
                                     </div>
                                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                         <ul class="breadcome-menu">
-                                            <li><a href="view_users.php">Dashboard</a>
+                                            <li><a href="view_pengguna.php">Dashboard</a>
                                             </li>
                                         </ul>
                                     </div>

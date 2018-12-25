@@ -128,7 +128,7 @@
                                                 <li><a href="tambah_berita.php">Add Berita</a></li>
                                             </ul>
                                         </li>
-                                        <li><a href="view_forum.php" data-toggle="collapse" data-target="#Charts"> Berita </a></li>
+                                        <li><a href="view_berita.php" data-toggle="collapse" data-target="#Charts"> Berita </a></li>
                                     </ul>
                                 </nav>
                             </div>
