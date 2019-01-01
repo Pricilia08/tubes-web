@@ -1,4 +1,4 @@
-<?php  
+ <?php  
     include("../include/config.php");  
     $delete_id=$_GET['del'];  
     $delete_query="delete  from volunteer WHERE id_vol='$delete_id'"; 

@@ -62,8 +62,8 @@
                         <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Berita</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Beita" href="view_berita.php"><span class="mini-sub-pro">All Berita</span></a></li>
-                                <li><a title="Add Berita" href="tambah_berita.php"><span class="mini-sub-pro">Add Berita</span></a></li>
+                                <li><a title="All Beita" href="index1.php?isi=view_berita"><span class="mini-sub-pro">All Berita</span></a></li>
+                                <li><a title="Add Berita" href="index1.php?isi=tambah_berita"><span class="mini-sub-pro">Add Berita</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -126,8 +126,8 @@
                                         <li><a href="view_volunteer.php" data-toggle="collapse" data-target="#Charts"> Volunteer </a></li>
                                         <li><a data-toggle="collapse" data-target="#Charts" href="view_berita.php">Berita <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                                <li><a href="view_berita.php">All Berita</a></li>
-                                                <li><a href="tambah_berita.php">Add Berita</a></li>
+                                                <li><a href="index1.php?isi=view_berita">All Berita</a></li>
+                                                <li><a href="index1.php?isi=tambah_berita">Add Berita</a></li>
                                             </ul>
                                         </li>
                                     </ul>
@@ -173,8 +173,8 @@
                             <div class="asset-inner">
                                 <table>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Nama Volunter</th>
+                                        <th>No</th>
+                                        <th>Nama Volunteer</th>
                                         <th>Email</th>
                                         <th>Setting</th>
                                     </tr>
@@ -192,25 +192,23 @@
                                         $total_rows = mysqli_fetch_array($result)[0];
                                         $total_pages = ceil($total_rows / $no_of_records_per_page);
 
-                                        $sql = "SELECT * FROM pengguna order by id desc LIMIT $offset, $no_of_records_per_page";
+                                        $sql = "SELECT * FROM pengguna order by id LIMIT $offset, $no_of_records_per_page";
                                         $res_data = mysqli_query($conn,$sql);
                                         $no = 1;
                                         while($row = mysqli_fetch_array($res_data)){
                                             $id=$row[0];  
                                             $nama_vol=$row[1];  
-                                            $email=$row[2];  
+                                            $email= $row[2];  
                                     ?>
-                                    <form method="post" action="view_pengguna.php">
-                                       <tr>
-                                        <td><?php echo $no++  ?></td>  
-                                        <td><?php echo $nama_vol ?></td>
+                                    <tr>
+                                        <td><?php echo $no++  ?></td>
+                                        <td><?php echo $nama_vol;  ?></td>
                                         <td><?php echo $email;  ?></td>
                                         <td>
                                             <a href="delete_pengguna.php?del=<?php echo $id ?>">
                                             <button data-toggle="tooltip" title="Trash" class="pd-setting-ed"><i class="fa fa-trash-o" aria-hidden="true"></i></button></a>
                                         </td>
-                                       </tr> 
-                                    </form>
+                                    </tr>
                                     <?php } ?> 
                                 </table>
                             </div>
@@ -231,7 +229,7 @@
                 </div>
             </div>
         </div>
-        
+       
        <div class="footer-copyright-area">
             <div class="container-fluid">
                 <div class="row">

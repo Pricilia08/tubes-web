@@ -62,7 +62,7 @@
                         <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Berita</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Beita" href="view_berita.php"><span class="mini-sub-pro">All Berita</span></a></li>
+                                <li><a title="All Beita" href="index1.php?isi=view_berita"><span class="mini-sub-pro">All Berita</span></a></li>
                                 <li><a title="Add Berita" href="tambah_berita.php"><span class="mini-sub-pro">Add Berita</span></a></li>
                             </ul>
                         </li>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2018 at 10:14 PM
+-- Generation Time: Jan 01, 2019 at 10:56 AM
 -- Server version: 10.1.36-MariaDB
 -- PHP Version: 7.2.11
 
@@ -60,8 +60,10 @@ CREATE TABLE `berita` (
 --
 
 INSERT INTO `berita` (`id_berita`, `judul_berita`, `deskripsi_berita`, `img_berita`, `tanggal`) VALUES
-(2, 'Kucing Persia', '<p>Ini adalah jenis kucing persia.</p>', 'k1.jpg', '2018-12-25 08:41:26'),
-(5, 'Anjing Golden Retriever', '<p>ini adalah jenis anjing Golden retriever yang banyak diminati oleh pecinta anjing.</p>', 'a2.jpg', '2018-12-25 08:46:54');
+(2, 'Kucing Persia', '<p>Ini adalah jenis kucing persia.</p>', 'k1.jpg', '2019-01-01 03:55:04'),
+(5, 'Anjing Golden Retriever', '<p>ini adalah jenis anjing Golden retriever yang banyak diminati oleh pecinta anjing.</p>', 'a2.jpg', '2018-12-25 08:46:54'),
+(7, 'Kucing Angora', '<p>ini kucing ku mana kucing mu?</p>', 'k2.jpg', '2019-01-01 09:33:07'),
+(8, 'Anjing Maltese', '<p>ini coba-coba</p>', 'a1.jpg', '2019-01-01 09:34:05');
 
 -- --------------------------------------------------------
 
@@ -81,32 +83,9 @@ CREATE TABLE `pengguna` (
 --
 
 INSERT INTO `pengguna` (`id`, `nama_vol`, `email`, `password`) VALUES
-(2, 'Pricilia Dwi Widyaastari', 'pricil@gmail.com', '0808'),
 (3, 'pricil', 'pricilia@gmail.com', '123'),
 (4, 'liza', 'liza@gmail.com', 'zia'),
-(6, 'dhea', 'dheamahdavikia1999@gmail.com', 'popop'),
-(7, 'liza', 'lalaliza@gmail.com', 'laliza');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `security_images`
---
-
-CREATE TABLE `security_images` (
-  `ID` int(11) NOT NULL,
-  `insertdate` datetime NOT NULL,
-  `referenceid` varchar(100) NOT NULL,
-  `hiddentext` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `security_images`
---
-
-INSERT INTO `security_images` (`ID`, `insertdate`, `referenceid`, `hiddentext`) VALUES
-(1, '2018-12-26 01:29:16', '1cb47842f67c8f7409c231ccd4a61258', '859QpIGm'),
-(2, '2018-12-26 01:39:01', '2ffa3e720ccc338c4b14430d7002df4a', 'TxhUNh56');
+(6, 'dhea', 'dheamahdavikia1999@gmail.com', 'popop');
 
 -- --------------------------------------------------------
 
@@ -131,8 +110,9 @@ CREATE TABLE `volunteer` (
 --
 
 INSERT INTO `volunteer` (`id_vol`, `nama_vol`, `phone`, `address`, `email`, `animal`, `animal_type`, `date`, `note`) VALUES
-(8, 'Pricilia Dwi Widyaastari', 2147483647, 'Jatibarang', 'pricilia@gmail.com', 'Cat', 'Cat - Maine coon', '2018-12-25 00:00:00', 'ini komen'),
-(14, 'liza', 2147483647, 'jayalaksana', 'lalaliza@gmail.com', 'Dog', 'Dog - Poodle', '2018-12-25 00:00:00', 'qwerty');
+(14, 'liza', 2147483647, 'jayalaksana', 'lalaliza@gmail.com', 'Dog', 'Dog - Poodle', '2018-12-25 00:00:00', 'qwerty'),
+(22, 'pricil', 8765432, 'Jatibarang', 'pricilia@gmail.com', 'Dog', 'Dog - Poodle', '2018-12-30 00:00:00', 'haiii'),
+(23, '', 0, '', '', '', '', '2019-01-01 00:00:00', '');
 
 --
 -- Indexes for dumped tables
@@ -157,12 +137,6 @@ ALTER TABLE `pengguna`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `security_images`
---
-ALTER TABLE `security_images`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indexes for table `volunteer`
 --
 ALTER TABLE `volunteer`
@@ -183,25 +157,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `berita`
 --
 ALTER TABLE `berita`
-  MODIFY `id_berita` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_berita` int(200) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `pengguna`
 --
 ALTER TABLE `pengguna`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
-
---
--- AUTO_INCREMENT for table `security_images`
---
-ALTER TABLE `security_images`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `volunteer`
 --
 ALTER TABLE `volunteer`
-  MODIFY `id_vol` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id_vol` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

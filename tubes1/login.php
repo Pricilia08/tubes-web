@@ -1,26 +1,3 @@
-<?php
-$koneksi=mysqli_connect("localhost","root","","tubes_pw");
-//Define function to insert security image
-function insertSecurityImage($inputname) {
-$refid = md5(mktime()*rand());
-$insertstr = "<img src=\"securityimage.php?".$refid."\"alt=\"SecurityImage\">\n
-<input type=\"hidden\" name=\"".$inputname."\"value=\"".$refid."\">";
-echo($insertstr);
-}
-//Define function to check security image confirmation
-function checkSecurityImage($referenceid, $enteredvalue) {
-$referenceid = mysql_escape_string($referenceid);
-$enteredvalue = mysql_escape_string($enteredvalue);
-$tempQuery = mysqli_query($koneksi, "SELECT ID FROM security_images WHERE
-referenceid='".$referenceid."' AND
-hiddentext='".$enteredvalue."'");
-if (mysql_num_rows($tempQuery)!=0) {
-return true;
-} else {
-return false;
-}
-}
-?>
 
 <!doctype html>
 <html lang="en">
@@ -45,42 +22,11 @@ return false;
       <div class="form-group">  
         <input class="form-control" placeholder="Password" name="password" type="password" autofocus>  
       </div>
-      <div class="form-group">  
-
-        <?php
-        if (isset($HTTP_POST_VARS["name"]) &&
-        isset($HTTP_POST_VARS["security_try"]))
-        {
-        //Connect to database
-        mysql_connect("localhost", "root", "");
-        mysql_select_db("tubes_pw");
-        //Set variables, and call checkSecurityImage
-        $security_refid = $HTTP_POST_VARS["security_refid"];
-        $security_try = $HTTP_POST_VARS["security_try"];
-        $checkSecurity = checkSecurityImage($security_refid,
-        $security_try);
-        //Depending on result, tell user entered value was correct orincorrect
-        if ($checkSecurity) {
-        $validnot = "correct";
-        } else {
-        $validnot = "incorrect";
-        }
-        //Write output
-        echo("<b>You entered this as the security text:</b><br>\n
-        ".$security_try."<br>\n
-        This is ".$validnot.".<br>\n
-        -------------------------------<br><br>\n
-        ");
-        }
-        ?>
-        <?php insertSecurityImage("security_refid") ?><br>
-        <p>Enter what you see:
-        <input name="security_try" type="text" id="security_try"
-        size="20"
-        maxlength="10">
-        <p>(can't see? try reloading page)
+      <div class="form-group">
+      <label for="captcha">Captcha</label>
+        <input name="kodeval" type="text" id="kodeval" size="6" maxlength="6" />
+        <img src="kodeacak.php" width="75" height="25" alt="Kode Acak" />  
       </div>
-      
       <div class="form-group row">
           <input class="btn btn-lg btn-success btn-block" type="submit" value="Login" name="login" >
       </div>
@@ -107,7 +53,7 @@ return false;
         $sql = "SELECT * FROM pengguna WHERE nama_vol='$nama_vol' AND password='$password'";
         $result = mysqli_query($conn, $sql); 
               
-        if(mysqli_num_rows($result) > 0)  
+        if((mysqli_num_rows($result) > 0) && ($_SESSION['kodecap']=$_POST['kodeval']))
         {  
             while($row = mysqli_fetch_assoc($result))
             {
@@ -121,7 +67,7 @@ return false;
         }  
         else  
         {  
-          echo "<script>alert('Username or password is incorrect!')</script>";  
+          echo "<script>alert('Username/password/captcha is incorrect!')</script>";  
         }  
     }  
 ?> 

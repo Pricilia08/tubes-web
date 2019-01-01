@@ -116,18 +116,21 @@
 			
 
 			<!-- Start callto-top Area -->
-			<section class="callto-top-area section-gap">
-				<div class="container">
-					<div class="row justify-content-between callto-top-wrap pt-40 pb-40">
-						<div class="input-group">
-                  			<input type="text" class="form-control" name="cari" placeholder="Search for...">
-                  			<span class="input-group-btn">
-                    		<button class="btn btn-secondary" type="submit" name="submit">Search</button>
-                  			</span>
-                		</div>	
-					</div>
-				</div>	
-			</section>
+			<div class="container">
+			 <div class="card my-4">
+	            <h5 class="card-header">Search</h5>
+	            <form action="search_berita.php" method="post">
+	            <div class="card-body">
+	                <div class="input-group">
+	                  <input type="text" class="form-control" name="cari" placeholder="Search for...">
+	                  <span class="input-group-btn">
+	                    <button class="btn btn-secondary" type="submit" name="submit">Search</button>
+	                  </span>
+	                </div>
+	            </div>
+	            </form>
+	          </div>
+	        </div>
 			<!-- End callto-top Area -->
 			
 

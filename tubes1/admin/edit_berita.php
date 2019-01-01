@@ -184,7 +184,7 @@
                 <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="product-status-wrap">
-                            <h4>Add Berita</h4>
+                            <h4>Edit Berita</h4>
                             <div class="asset-inner">
                             <div class="col-md-12">
                                 <form  method="post" action="" enctype="multipart/form-data">
@@ -297,7 +297,7 @@
             mysqli_query($conn, "UPDATE berita SET judul_berita = '$judul_berita',deskripsi_berita = '$deskripsi_berita',img_berita = '$nama_file',tanggal = '$tanggal' WHERE id_berita = '$id_berita'");
         }
 
-        print "<meta http-equiv=\"refresh\"content=\"1;URL=view_berita.php\">";
+        print "<meta http-equiv=\"refresh\"content=\"1;URL=index1.php?isi=view_berita\">";
         
 	}
 ?>

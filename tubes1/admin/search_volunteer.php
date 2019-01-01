@@ -62,8 +62,8 @@
                         <li>
                             <a class="has-arrow" href="all-courses.html" aria-expanded="false"><span class="educate-icon educate-library icon-wrap"></span> <span class="mini-click-non">Berita</span></a>
                             <ul class="submenu-angle" aria-expanded="false">
-                                <li><a title="All Beita" href="view_berita.php"><span class="mini-sub-pro">All Berita</span></a></li>
-                                <li><a title="Add Berita" href="tambah_berita.php"><span class="mini-sub-pro">Add Berita</span></a></li>
+                                <li><a title="All Beita" href="index1.php?isi=view_berita"><span class="mini-sub-pro">All Berita</span></a></li>
+                                <li><a title="Add Berita" href="index1.php?isi=tambah_berita"><span class="mini-sub-pro">Add Berita</span></a></li>
                             </ul>
                         </li>
                     </ul>
@@ -126,8 +126,8 @@
                                         <li><a href="view_volunteer.php" data-toggle="collapse" data-target="#Charts"> Volunteer </a></li>
                                         <li><a data-toggle="collapse" data-target="#Charts" href="view_berita.php">Berita <span class="admin-project-icon edu-icon edu-down-arrow"></span></a>
                                             <ul class="collapse dropdown-header-top">
-                                                <li><a href="view_berita.php">All Berita</a></li>
-                                                <li><a href="tambah_berita.php">Add Berita</a></li>
+                                                <li><a href="index1.php?isi=view_berita">All Berita</a></li>
+                                                <li><a href="index1.php?isi=tambah_berita">Add Berita</a></li>
                                             </ul>
                                         </li>
                                         <li><a href="view_forum.php" data-toggle="collapse" data-target="#Charts"> Volunteer </a></li>
